@@ -1,3 +1,6 @@
+# Rocketchat server https - Docker image
+#### Simple integration of Rocketchat server https that use Nginx as reverse proxy
+
 ## Configuration
 
 ### Nginx server
