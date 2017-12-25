@@ -1,0 +1,19 @@
+version: '2'
+services:
+    mongo-mongodb:
+        container_name: mongodb
+        image: mongo:3.2.10
+        ports:
+            - 27017:27017
+            
+    chat-app:
+        container_name: rocketchat-nginx
+        image: rocket-nginx:latest
+        environment:
+            - MONGO_URL=mongodb://mongo-mongodb:27017/rocketchat
+            - ROOT_URL=https://yourdomain.com:3000
+            - PORT=3000
+        ports:
+            - 3000:3000  
+        volumes:
+            - ./cert:/cert
